@@ -1,7 +1,7 @@
 import { Droppable } from "react-beautiful-dnd"
 import { memo } from "react"
 
-import Task from "./task"
+import Item from "./item"
 
 const Column = (props) => {
 	return (
@@ -10,8 +10,8 @@ const Column = (props) => {
 			<Droppable droppableId={props.column.id} direction={props.column.direction}>
 				{({ innerRef, droppableProps, placeholder }) => (
 					<div style={{ display: "flex", padding: "8px" }} ref={innerRef} {...droppableProps}>
-						{props.tasks.map((task, index) => (
-							<Task key={task.id} task={task} index={index} />
+						{props.items.map((item, index) => (
+							<Item key={item.id} item={item} index={index} />
 						))}
 						{placeholder}
 					</div>

@@ -73,9 +73,9 @@ const Dashboard = () => {
 		<DragDropContext onDragEnd={onDragEnd}>
 			{state.columnOrder.map((columnId) => {
 				const column = state.columns[columnId]
-				const tasks = column.itemIds.map((taskId) => state.tasks[taskId])
+				const items = column.itemIds.map((taskId) => state.items[taskId])
 
-				return <Column key={column.id} column={column} tasks={tasks} />
+				return <Column key={column.id} column={column} items={items} />
 			})}
 		</DragDropContext>
 	)
