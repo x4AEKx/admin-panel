@@ -9,7 +9,7 @@ export function* getUsers() {
 	yield takeEvery(FETCH_USERS, function* () {
 		try {
 			yield put(showLoading(true))
-			const data = yield call(JsonplaceholderleService.getUsers)
+			const { data } = yield call(JsonplaceholderleService.getUsers)
 			if (data) {
 				yield put(setUsers(data))
 			} else {

@@ -1,12 +1,9 @@
-import fetch from "auth/FetchInterceptor"
+import axios from "axios"
 
 const JsonplaceholderleService = {}
 
 JsonplaceholderleService.getUsers = function () {
-	return fetch({
-		url: "/users",
-		method: "get",
-	})
+	return axios.get("https://jsonplaceholder.typicode.com/users")
 }
 
 export default JsonplaceholderleService
