@@ -3,5 +3,5 @@ import Auth from "./Auth"
 import Users from "./Users"
 
 export default function* rootSaga(getState) {
-	yield all([Users()])
+	yield all([Auth(), Users()])
 }
